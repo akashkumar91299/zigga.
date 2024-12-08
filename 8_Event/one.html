@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>html Events</title>
+</head>
+<body style="background-color: #212121; color: aliceblue;">
+    <h2>Amazing Images</h2>
+    <div>
+        <ul id="images">
+            <li> <img width="300px" id="a" src="https://images.pexels.com/photos/2040807/pexels-photo-2040807.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="temple"></li>
+
+            <li> <img width="300px" id="s" src="https://images.pexels.com/photos/6556790/pexels-photo-6556790.jpeg?auto=compress&cs=tinysrgb&w=600" alt="bholenath"></li>
+
+            <li> <img width="400px" id="k" src="https://images.pexels.com/photos/15031440/pexels-photo-15031440/free-photo-of-a-crowd-standing-in-front-of-the-kedarnath-temple-in-kedarnath-india-during-a-ceremony.jpeg?auto=compress&cs=tinysrgb&w=600" alt="kedarnath" onclick="alert('kedarnath clicked')"></li>
+
+            <li> <img width="400px" id="4k" src="https://images.pexels.com/photos/842711/pexels-photo-842711.jpeg?auto=compress&cs=tinysrgb&w=600" alt=" nature"></li>
+
+            <li> <a style="color: aliceblue;" href="https://www.pexels.com/search/4k%20wallpaper/" id ="pi"> Pixels</a>
+            </li>
+        </ul>
+    </div>
+</body>
+<script>
+    // document.getElementById('s').onclick=function(){
+    //     alert('lord shiva')
+    // }
+
+    // document.getElementById('images').addEventListener('click',function(e){
+    //   console.log('please click inside the ul');
+    //   e.stopPropagation()
+    // },false)
+
+    // document.getElementById('4k').addEventListener('click',function(e){
+    //   console.log('nature clicked');
+    //   e.stopPropagation()
+    // },false)
+    // document.getElementById('pi').addEventListener('click',function(e){
+    //   console.log('pixels clicked');
+    //   e.preventDefault()
+    //   e.stopPropagation()
+    // },false)
+    
+    document.querySelector('#images').addEventListener('click',function(e){
+        console.log(e.target.tagName);
+        if(e.target.tagName==='IMG')
+    {  
+console.log(e.target.parentNode);
+ let removeIt =e.target.parentNode;
+ removeIt.remove()
+    }
+    },false)
+</script>
+</html>
